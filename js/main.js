@@ -26,15 +26,14 @@ window.addEventListener(
   _.throttle(function () {
     console.log(window.scrollY)
     if (window.scrollY > 500) {
-      //   badgeEl.style.display = 'none'
-      //   gsap.to(요소, 지속시간, 옵션)
+      //   gsap.to(요소, 지속시간, 옵션) 지속시간은 초단위 작성
+      // 애니메이션 작성을 위한 gsap.to() 사용, index.html에서 불러오는 로직 추가
       gsap.to(badgeEl, 0.6, {
         opacity: 0,
         display: 'none',
       })
       // 뱃지 숨기기
     } else {
-      //   badgeEl.style.display = 'block'
       gsap.to(badgeEl, 0.6, {
         opacity: 1,
         display: 'block',
@@ -47,3 +46,15 @@ window.addEventListener(
 // 그 다음 throttle 이라는 메소드의 첫 번째 인수로는 사용하고자 하는 함수를 넣어줌
 // 그 이후 얼마의 간격으로 실행되면 되는지 밀리ㅅ컨드 단위로 시간을 추가한다.
 // _.throttle(함수, 시간)
+
+const fadeEls = document.querySelectorAll('.visual .fade-in')
+
+// /받는 매개변수, 반복횟수/
+fadeEls.forEach(function (fadeEl, index) {
+  //   gsap.to(요소, 지속시간, 옵션) 지속시간은 초단위 작성
+  gsap.to(fadeEl, 1, {
+    opacity: 1,
+    delay: (index + 1) * 0.7,
+    // 처음 반복할때 index의 값은 0, 곱하지 않으면 모두 0.7로 딜레이가 없어 동시출력됨
+  })
+})

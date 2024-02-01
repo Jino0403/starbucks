@@ -21,6 +21,59 @@ a {
   margin: 0 auto;
   position: relative;
 }
+.btn {
+  width: 130px;
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  transition: 0.4s;
+}
+.btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.btn.btn--reverse {
+  background-color: #333;
+  color: #fff;
+}
+
+.btn.btn--reverse:hover {
+  background-color: transparent;
+  color: #333;
+}
+
+.btn.btn--brown {
+  border-color: #592b18;
+  color: #592b18;
+}
+.btn.btn--brown:hover {
+  color: #fff;
+  background-color: #592b18;
+}
+.btn.btn--gold {
+  color: #d9aa8a;
+  border-color: #d9aa8a;
+}
+.btn.btn--gold:hover {
+  color: #fff;
+  background-color: #d9aa8a;
+}
+.btn.btn--white {
+  color: #fff;
+  border-color: #fff;
+}
+.btn.btn--white:hover {
+  color: #333;
+  background-color: #fff;
+}
 
 /* HEADER */
 header {
@@ -29,6 +82,7 @@ header {
   top: 0;
   background-color: #f6f5f0;
   border-bottom: 1px solid #c8c8c8;
+  z-index: 9;
 }
 
 header > .inner {
@@ -224,4 +278,62 @@ header .badges .badge {
   margin-bottom: 12px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
   cursor: pointer;
+}
+
+/* 여기서부터는 section (ViSUAL 영역)입니다. */
+
+.visual {
+  margin-top: 120px;
+  background-image: url('../images/visual_bg.jpg');
+  background-position: center;
+}
+
+.visual .inner {
+  height: 646px;
+}
+
+.visual .title {
+  position: absolute;
+  top: 88px;
+  left: -10px;
+}
+
+.visual .title .btn {
+  position: absolute;
+  top: 259px;
+  left: 173px;
+}
+
+.visual .cup1.image {
+  position: absolute;
+  bottom: 0;
+  right: -47px;
+}
+
+.visual .cup1.text {
+  position: absolute;
+  top: 38px;
+  right: 171px;
+}
+
+.visual .cup2.image {
+  position: absolute;
+  bottom: 0px;
+  right: 162px;
+}
+
+.visual .cup2.text {
+  position: absolute;
+  top: 321px;
+  right: 416px;
+}
+
+.visual .spoon {
+  position: absolute;
+  bottom: 0;
+  left: 275px;
+}
+
+.visual .fade-in {
+  opacity: 0;
 }
