@@ -687,7 +687,7 @@ margin-left 속성으로 자식요소 크기의 절반 너비 만큼의 값을 -
   background-image: url('../images/favorite_bg.jpg');
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: fixed; /* 요소가 스크롤 될 때 같이 스크롤 되지 않고 viewport 부분에 고정*/
+  background-attachment: fixed; /* 요소가 스크롤 될 때 같이 스크롤 되지 않고 viewport 부분에 고정 패럴랙스 개념 참조*/
   background-size: cover;
 }
 .pick-your-favorite .inner {
@@ -705,4 +705,53 @@ margin-left 속성으로 자식요소 크기의 절반 너비 만큼의 값을 -
 }
 .pick-your-favorite .text-group .description {
   margin-bottom: 40px;
+}
+
+/* RESERVE STORE */
+.reserve-store {
+  background-image: url('../images/reserve_store_bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.reserve-store .inner {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reserve-store .medal {
+  width: 334px;
+  height: 334px;
+  perspective: 600;
+}
+
+.reserve-store .medal .front,
+.reserve-store .medal .back {
+  width: 334px;
+  height: 334px;
+  position: absolute;
+  backface-visibility: hidden; /*뒤집었을때 반대면 안보이게 하기위함*/
+  transition: 1s;
+}
+
+.reserve-store .medal .front {
+  transform: rotateY(0deg);
+}
+.reserve-store .medal:hover .front {
+  transform: rotateY(180deg);
+}
+.reserve-store .medal .back {
+  transform: rotateY(-180deg);
+}
+.reserve-store .medal:hover .back {
+  transform: rotateY(0deg);
+}
+.reserve-store .medal .back .btn {
+  position: absolute;
+  top: 240px;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
