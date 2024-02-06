@@ -58,3 +58,29 @@ fadeEls.forEach(function (fadeEl, index) {
     // 처음 반복할때 index의 값은 0, 곱하지 않으면 모두 0.7로 딜레이가 없어 동시출력됨
   })
 })
+
+// new Swiper(선택자, 옵션)
+new Swiper('.notice-line .swiper-container', {
+  direction: 'vertical',
+  autoplay: true,
+  loop: true,
+})
+
+new Swiper('.promotion .swiper-container', {
+  // direction:'horizontal' 수평옵션은 기본값으로 설정되어있기 때문에 생략
+  slidesPerView: 3, // 한번에 보여줄 슬라이드 개수
+  spaceBetween: 10, // 슬라이드 사이 여백
+  centeredSlides: true, // 1번 슬라이드가 가운데 보이기
+  loop: true,
+  autoplay: {
+    delay: 5000,
+  },
+  pagination: {
+    el: '.promotion .swiper-pagination', // 페이지 요소 선택자
+    clickable: true, // 사용자 페이지 번호요소 선택 가능 불가능 제어
+  },
+  navigation: {
+    prevEl: '.promotion .swiper-prev',
+    nextEl: '.promotion .swiper-next',
+  },
+})
