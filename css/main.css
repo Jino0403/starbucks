@@ -432,6 +432,12 @@ header .badges .badge {
   height: 693px;
   background-color: #f6f5ef;
   position: relative;
+  transition: height 0.4s;
+  overflow: hidden;
+}
+
+.notice .promotion.hide {
+  height: 0;
 }
 
 /*특정 요소 중앙에 위치하기 위해 부모(promotion)에 position relative 주고

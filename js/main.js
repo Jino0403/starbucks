@@ -84,3 +84,19 @@ new Swiper('.promotion .swiper-container', {
     nextEl: '.promotion .swiper-next',
   },
 })
+
+const promotionEl = document.querySelector('.promotion')
+const promotionToggleBtn = document.querySelector('.toggle-promotion')
+let isHidePromotion = false
+
+promotionToggleBtn.addEventListener('click', () => {
+  isHidePromotion = !isHidePromotion
+  if (isHidePromotion) {
+    //숨김처리!
+    promotionEl.classList.add('hide')
+  } else
+    [
+      // 보이기!
+      promotionEl.classList.remove('hide'),
+    ]
+})
