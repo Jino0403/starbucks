@@ -523,3 +523,95 @@ margin-left 속성으로 자식요소 크기의 절반 너비 만큼의 값을 -
   background-color: #333;
   color: #fff;
 }
+
+/* REWARDS */
+.rewards {
+  position: relative;
+}
+.rewards .bg-left {
+  width: 50%;
+  height: 100%;
+  background-color: #272727;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.rewards .bg-right {
+  width: 50%;
+  height: 100%;
+  background-color: #d5c798;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.rewards .inner {
+  background-image: url('../images/rewards.jpg');
+  height: 241px;
+}
+
+.rewards .btn-group {
+  width: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: 24px;
+  right: 0;
+}
+
+.rewards .btn-group .btn.sign-up {
+  margin-right: 10px;
+}
+.rewards .btn-group .btn.sign-in {
+  width: 110px;
+}
+.rewards .btn-group .btn.gift {
+  margin-top: 10px;
+  flex-grow: 1;
+  /*최대한의 너비를 사용하게 하기 위해 flex-grow 속성사용*/
+}
+
+/* YOUTUBE VIDEO */
+.youtube {
+  position: relative;
+  background-color: #333;
+  height: 700px;
+  overflow: hidden;
+}
+
+.youtube .youtube__area {
+  width: 1920px;
+  background-color: orange;
+  position: absolute;
+  left: 50%;
+  margin-left: calc(1920px / -2);
+  top: 50%;
+  margin-top: calc(((1920px * 9) / 16) / -2);
+}
+
+.youtube .youtube__area::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%;
+}
+/*width 값을 설정하고 height를 0으로 설정한 상황에서 padding-top 속성을 사용하게되면 
+유튜브 같은 비율이 필요한 과정에서 유용하게 쓸 수 있음. 16:9의 경우 100:56.25이므로 위에서는 top을 56.25를 사용함*/
+.youtube .youtube__cover {
+  background-image: url('../images/video_cover_pattern.png');
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#player {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
