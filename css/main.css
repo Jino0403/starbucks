@@ -615,3 +615,23 @@ margin-left 속성으로 자식요소 크기의 절반 너비 만큼의 값을 -
   top: 0;
   left: 0;
 }
+
+.youtube .inner {
+  height: 700px;
+}
+
+.youtube .floating1 {
+  position: absolute;
+  top: 50px;
+  left: 0;
+}
+.youtube .floating2 {
+  position: absolute;
+  top: 350px;
+  left: 150px;
+}
+.youtube .floating3 {
+  position: absolute;
+  bottom: -200px;
+  right: 0;
+}
