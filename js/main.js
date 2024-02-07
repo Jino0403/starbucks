@@ -85,6 +85,18 @@ new Swiper('.promotion .swiper-container', {
   },
 })
 
+new Swiper('.awards .swiper-container', {
+  direction: 'horizontal',
+  slidesPerView: 5,
+  autoplay: true,
+  loop: true,
+  spaceBetween: 30,
+  navigation: {
+    prevEl: '.awards .swiper-prev',
+    nextEl: '.awards .swiper-next',
+  },
+})
+
 const promotionEl = document.querySelector('.promotion')
 const promotionToggleBtn = document.querySelector('.toggle-promotion')
 let isHidePromotion = false
@@ -131,3 +143,21 @@ function floatingObject(selector, delay, size) {
 floatingObject('.floating1', 1, 15)
 floatingObject('.floating2', 0.5, 15)
 floatingObject('.floating3', 1.5, 20)
+
+const spyEls = document.querySelectorAll('section.scroll-spy')
+
+spyEls.forEach(function (spyEl) {
+  new ScrollMagic.Scene({
+    triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
+    triggerHook: 0.8, // 내가 감시하는 ㅣ요소가 뷰포트의 어떤 지점에서 감시되었다는 것을 판단할 것인가 지정
+  })
+    .setClassToggle(spyEl, 'show') // (토글할 요소 ,토글할 클래스이름)
+    .addTo(new ScrollMagic.Controller())
+  // scrollMagic에서 기본적으로 우리가 추가한 옵션들을 내부의 컨트롤러의 내용을 할=당하여 실제로 동작할 수 있는 구조를 만들어주는 용도로 사용
+})
+// Scene는 특정한 요소를 감시하는 옵션을 지정해주는 메소드 Scene({ })
+// setClassToggle 토클 기능을 위해서 class를 설정 및 해지 해주는 역할
+// ScrollMagic이 컨트롤러의 개념을 이해하기 위해 addTO 사용
+
+const thisYear = document.querySelector('.this-year')
+thisYear.textContent = new Date().getFullYear()
