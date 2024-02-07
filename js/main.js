@@ -19,8 +19,8 @@ searchInputEl.addEventListener('blur', function () {
 })
 
 const badgeEl = document.querySelector('header .badges')
-
-// 그냥 scroll을 사용하면 함수가 우르르 실행되는데 방지하는 용도로 throttle을 사용
+const toTopEl = document.querySelector('#to-top')
+// 그냥 scroll을 사용하면 함수가 우르르 실행되는데 방지하는 용도로 throttle을 사용(lodash에서 제공)
 window.addEventListener(
   'scroll',
   _.throttle(function () {
@@ -28,17 +28,25 @@ window.addEventListener(
     if (window.scrollY > 500) {
       //   gsap.to(요소, 지속시간, 옵션) 지속시간은 초단위 작성
       // 애니메이션 작성을 위한 gsap.to() 사용, index.html에서 불러오는 로직 추가
+      // 뱃지 숨기기
       gsap.to(badgeEl, 0.6, {
         opacity: 0,
         display: 'none',
       })
-      // 뱃지 숨기기
+      // 페이지 상단 버튼 보이기
+      gsap.to(toTopEl, 0.2, {
+        x: 0,
+      })
     } else {
+      // 뱃지 보이기
       gsap.to(badgeEl, 0.6, {
         opacity: 1,
         display: 'block',
       })
-      // 뱃지 보이기
+      //페이지 상단 버튼 숨기기
+      gsap.to(toTopEl, 0.2, {
+        x: 100,
+      })
     }
   }, 300),
 )
@@ -46,6 +54,15 @@ window.addEventListener(
 // 그 다음 throttle 이라는 메소드의 첫 번째 인수로는 사용하고자 하는 함수를 넣어줌
 // 그 이후 얼마의 간격으로 실행되면 되는지 밀리ㅅ컨드 단위로 시간을 추가한다.
 // _.throttle(함수, 시간)
+
+toTopEl.addEventListener('click', function () {
+  gsap.to(window, 0.7, {
+    scrollTo: 0,
+  })
+})
+// scroll to 옵션을 사용하기 위해 index.html에 scroll to plugin을 불러온것
+// 윈도우에 0.7초 동안 scrollTo 옵션을 통해 해당하는 값의 위치로 이동시키겠다
+// 0을 입력했으므로 0픽셀에 해당하는 지점으로 이동시키겠다는 말임
 
 const fadeEls = document.querySelectorAll('.visual .fade-in')
 
