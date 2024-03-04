@@ -562,8 +562,6 @@ margin-left 속성으로 자식요소 크기의 절반 너비 만큼의 값을 -
   color: #333;
 }
 
-
-
 /*img 요소가 display:block , margin: 0 auto 인 경우 width속성 없이도 가운데 정렬 가능*/
 
 #to-top {
