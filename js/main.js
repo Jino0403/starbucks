@@ -1,23 +1,3 @@
-const searchEl = document.querySelector('.search')
-const searchInputEl = searchEl.querySelector('input')
-
-// 클릭했을때 강제 포커스
-searchEl.addEventListener('click', function () {
-  searchInputEl.focus()
-})
-
-// 포커스 되면서 focused라는 클래스 추가 및 placeholder 속성 추가
-searchInputEl.addEventListener('focus', function () {
-  searchEl.classList.add('focused')
-  searchInputEl.setAttribute('placeholder', '통합검색')
-})
-
-// 포커스 해제되면서 blur 속성 사용, focused라는 클래스 제거 및 placeholder 글자 공백으로
-searchInputEl.addEventListener('blur', function () {
-  searchEl.classList.remove('focused')
-  searchInputEl.setAttribute('placeholder', '')
-})
-
 const badgeEl = document.querySelector('header .badges')
 const toTopEl = document.querySelector('#to-top')
 // 그냥 scroll을 사용하면 함수가 우르르 실행되는데 방지하는 용도로 throttle을 사용(lodash에서 제공)
@@ -175,6 +155,3 @@ spyEls.forEach(function (spyEl) {
 // Scene는 특정한 요소를 감시하는 옵션을 지정해주는 메소드 Scene({ })
 // setClassToggle 토클 기능을 위해서 class를 설정 및 해지 해주는 역할
 // ScrollMagic이 컨트롤러의 개념을 이해하기 위해 addTO 사용
-
-const thisYear = document.querySelector('.this-year')
-thisYear.textContent = new Date().getFullYear()
